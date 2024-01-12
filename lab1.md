@@ -14,7 +14,7 @@ run the `cd` command as `cd lecture1` in the directory `/home`
 [user@sahara ~]$ cd lecture1
 [user@sahara ~/lecture1]$
 ```
-the directory is set to `/home/lecture1` and the prompt changes
+Using the `cd` command with a directory as an argument will change the directory to the directory in the argument. The directory was set to `/home/lecture1/` since `cd lecture1` was called in the `/home` directory. If `cd lecture1/messages` was called in the `/home` directory, then the directory would be set to `/home/lecture1/messages`. An error messgae will appear if the directory in the argument doesn't exist.
 ### file as argument
 run the `cd` command as `cd Hello.java` in the directory `/home/lecture1`
 ```
