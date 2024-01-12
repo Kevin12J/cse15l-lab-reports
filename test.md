@@ -9,7 +9,7 @@ This is heading 1
 This is a link:[link](https://kevin12j.github.io/cse15l-lab-reports/index.html)
 
 
-This is a picture: ![Image](/car.jpg)
+This is a picture: ![Image](https://commonmark.org/help/images/favicon.png)
 
 >This is a blockquote
 
