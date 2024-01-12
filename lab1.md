@@ -13,8 +13,15 @@ run the `cd` command as `cd lecture1` in the directory `/home`
 [user@sahara ~]$ cd lecture1
 [user@sahara ~/lecture1]$
 ```
-the directory is set to `/home/lecture1`
+the directory is set to `/home/lecture1` and the prompt changes
 ### file as argument
+run the `cd` command as `cd Hello.java` in the directory `/home/lecture1`
+```
+[user@sahara ~/lecture1]$ cd Hello.java
+bash: cd: Hello.java: Not a directory
+[user@sahara ~/lecture1]$
+```
+the output is `bash: cd: Hello.java: Not a directory` and this is an error because `cd` had a file used as an argument instead of a directory
 ***
 ## `ls` command
 ### no arguments
