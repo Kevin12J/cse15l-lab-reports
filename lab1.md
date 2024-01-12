@@ -6,7 +6,7 @@ run the `cd` command with no arguments in the directory `/home`
 [user@sahara ~]$ cd
 [user@sahara ~]$ 
 ```
-nothing happens when using cd with no arguments and the directory is still `/home`
+the directory is still `/home` since calling `cd` with no arguments goeas back to the home directory so calling `cd` in `/home/lecture1` will set the directory to `/home`
 ### directory as argument
 run the `cd` command as `cd lecture1` in the directory `/home`
 ```
