@@ -14,9 +14,9 @@ This is a picture: ![Image](https://commonmark.org/help/images/favicon.png)
 >This is a blockquote
 
 This is a list:
-*item 1
-*item 2
-*item 3
+* item 1
+* item 2
+* item 3
 
 This is a numbered list:
 1) item 1
