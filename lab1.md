@@ -54,8 +54,13 @@ the output is the file put as the argument with the `ls` command
 run the `cat` command with no arguments in the directory `/home`
 ```
 [user@sahara ~]$ cat
-
+hello
+hello
+world
+world
+^C
+[user@sahara ~]$ 
 ```
-this caused an error and the terminal got stuck
+There is no intial output but the user can type in different things and have them outputed again. The user can exit this state by pressing [ctrl]+[c].
 ### directory as argument
 ### file as argument
