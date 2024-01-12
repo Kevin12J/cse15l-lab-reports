@@ -61,4 +61,27 @@ world
 ```
 There is no intial output but the user can type in different things and have them outputed again. The user can exit this state by pressing [ctrl]+[c].
 ### directory as argument
+run the `cat` command as `cat lecture1` in the directory `/home'
+```
+[user@sahara ~]$ cat lecture1
+cat: lecture1: Is a directory
+[user@sahara ~]$
+```
+the output is `cat: lecture1: Is a directory` and this is an error because `cat` had a directory used as an argument
 ### file as argument
+run the `cat` command as `cat Hello.java` in the directiory `/home/lecture1`
+```
+[user@sahara ~/lecture1]$ cat Hello.java
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class Hello {
+  public static void main(String[] args) throws IOException {
+    String content = Files.readString(Path.of(args[0]), StandardCharsets.UTF_8);    
+    System.out.println(content);
+  }
+}[user@sahara ~/lecture1]$ 
+```
+the output is the contents in the `Hello.java` file
