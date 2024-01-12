@@ -25,8 +25,29 @@ the output is `bash: cd: Hello.java: Not a directory` and this is an error becau
 ***
 ## `ls` command
 ### no arguments
+run the `ls` command with no arguments in the directory `/home`
+```
+[user@sahara ~]$ ls
+lecture1
+[user@sahara ~]$ 
+```
+the output is the contents in the `/home` directory which is just another directory
 ### directory as argument
+run the `ls` command as `ls lecture1` in the directory `/home`
+```
+[user@sahara ~]$ ls lecture1
+Hello.class  Hello.java  messages  README
+[user@sahara ~]$ 
+```
+the output is the contents in the `\home\lecture1` directory 
 ### file as argument
+run the `ls` command as `ls Hello.java` in the directory `/home/leceture1'
+```
+[user@sahara ~/lecture1]$ ls Hello.java
+Hello.java
+[user@sahara ~/lecture1]$ 
+```
+the output is the file put as the argument with the `ls` command
 ***
 ## `cat` command
 ### no arguments
