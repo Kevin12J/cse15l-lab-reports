@@ -24,6 +24,7 @@ This is a numbered list:
 3) item 3
 
 This is a horizontal rule:
+
 ***
 
 This is a code block:
