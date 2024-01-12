@@ -22,9 +22,6 @@ bash: cd: Hello.java: Not a directory
 [user@sahara ~/lecture1]$
 ```
 the output is `bash: cd: Hello.java: Not a directory` and this is an error because `cd` had a file used as an argument instead of a directory
-
-***
-
 ## `ls` command
 ### no arguments
 run the `ls` command with no arguments in the directory `/home`
@@ -50,9 +47,6 @@ Hello.java
 [user@sahara ~/lecture1]$ 
 ```
 the output is the file put as the argument with the `ls` command
-
-***
-
 ## `cat` command
 ### no arguments
 run the `cat` command with no arguments in the directory `/home`
