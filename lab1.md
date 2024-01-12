@@ -51,5 +51,11 @@ the output is the file put as the argument with the `ls` command
 ***
 ## `cat` command
 ### no arguments
+run the `cat` command with no arguments in the directory `/home`
+```
+[user@sahara ~]$ cat
+
+```
+this caused an error and the terminal got stuck
 ### directory as argument
 ### file as argument
