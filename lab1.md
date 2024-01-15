@@ -41,7 +41,7 @@ Hello.class  Hello.java  messages  README
 ```
 Using the `ls` command with a directory as an argument will result in the contents of the specified directory being returned. `Hello.class  Hello.java  messages  README` was returned as they were in the directory `/home/lecture1`. An error message will appear if the directory used as the argument is not found.
 ### path to file as argument
-Call the `ls` command as `ls lecture1/Hello.java` in the directory `/home'
+Call the `ls` command as `ls lecture1/Hello.java` in the directory `/home`
 ```
 [user@sahara ~]$ ls lecture1/Hello.java
 lecture1/Hello.java
@@ -62,7 +62,7 @@ world
 ```
 Using the `cat` command with no arguments will place the terminal in a state where each user input is repeated back. There is no intial output but the user can type in different things and have them outputed again. The user can exit this state by pressing [ctrl]+[c].
 ### path to directory as argument
-Call the `cat` command as `cat lecture1` in the directory `/home'
+Call the `cat` command as `cat lecture1` in the directory `/home`
 ```
 [user@sahara ~]$ cat lecture1
 cat: lecture1: Is a directory
