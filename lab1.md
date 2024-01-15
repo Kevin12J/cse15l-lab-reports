@@ -22,7 +22,7 @@ Call the `cd` command as `cd Hello.java` in the directory `/home/lecture1`
 bash: cd: Hello.java: Not a directory
 [user@sahara ~/lecture1]$
 ```
-the output is `bash: cd: Hello.java: Not a directory` and this is an error because `cd` had a file used as an argument instead of a directory
+Using the `cd` commad with a file as an argument will result in an error. The output was `bash: cd: Hello.java: Not a directory` because the file `Hello.java` was used as the argument with the `cd` command, and `Hello.java` is not a directory.
 ## `ls` command
 ### no arguments
 Call the `ls` command with no arguments in the directory `/home`
@@ -31,7 +31,7 @@ Call the `ls` command with no arguments in the directory `/home`
 lecture1
 [user@sahara ~]$ 
 ```
-the output is the contents in the `/home` directory which is just another directory
+Using the `ls` command with no arguments will return the contents of the current directory. The directory `lecture1` was returned since `lecture1` was the directory inside `/home`. If `ls` was called in the directory `/home/lecture1` the output would be `Hello.class  Hello.java  messages  README` as those were the contents in the `/home/lecture1` directory. 
 ### directory as argument
 Call the `ls` command as `ls lecture1` in the directory `/home`
 ```
@@ -39,7 +39,7 @@ Call the `ls` command as `ls lecture1` in the directory `/home`
 Hello.class  Hello.java  messages  README
 [user@sahara ~]$ 
 ```
-the output is the contents in the `\home\lecture1` directory 
+Using the `ls` command with a directory as an argument will result in the contents of the specified directory being returned. `Hello.class  Hello.java  messages  README` was returned as they were in the directory `/home/lecture1`. An error message will appear if the directory used as the argument is not found.
 ### file as argument
 Call the `ls` command as `ls Hello.java` in the directory `/home/leceture1'
 ```
@@ -47,7 +47,7 @@ Call the `ls` command as `ls Hello.java` in the directory `/home/leceture1'
 Hello.java
 [user@sahara ~/lecture1]$ 
 ```
-the output is the file put as the argument with the `ls` command
+Using the `ls` command with a file as an argument will return the name of the file in the argument. The output was `Hello.java` when calling `ls Hello.java`. If you use a file that doesn't exist it will result in an error message. For example calling `ls bye.java` will result in the output `ls: cannot access 'bye.java': No such file or directory`.
 ## `cat` command
 ### no arguments
 Call the `cat` command with no arguments in the directory `/home`
@@ -60,7 +60,7 @@ world
 ^C
 [user@sahara ~]$ 
 ```
-There is no intial output but the user can type in different things and have them outputed again. The user can exit this state by pressing [ctrl]+[c].
+Using the `cat` command with no arguments will place the terminal in a state where each user input is repeated back. There is no intial output but the user can type in different things and have them outputed again. The user can exit this state by pressing [ctrl]+[c].
 ### directory as argument
 Call the `cat` command as `cat lecture1` in the directory `/home'
 ```
@@ -68,7 +68,7 @@ Call the `cat` command as `cat lecture1` in the directory `/home'
 cat: lecture1: Is a directory
 [user@sahara ~]$
 ```
-the output is `cat: lecture1: Is a directory` and this is an error because `cat` had a directory used as an argument
+Using the `cat` command with a directory as an argument will result in an error. The output was `cat: lecture1: Is a directory` since a directory was used an argument.
 ### file as argument
 Call the `cat` command as `cat Hello.java` in the directiory `/home/lecture1`
 ```
@@ -85,4 +85,4 @@ public class Hello {
   }
 }[user@sahara ~/lecture1]$ 
 ```
-the output is the contents in the `Hello.java` file
+Using the `cat` command with a file as the argument will print out the contents of the file. The contents of multiple files can be shown by using additional arguments as shown with calling `cat en-us.txt es-mx.txt` in the `/home/lecture1/messages` directory will output the contents of both files. If you use a file that doesn't exist it will result in an error. For example calling `cat bye.java` will result in the output `cat: bye.java: No such file or directory`.
