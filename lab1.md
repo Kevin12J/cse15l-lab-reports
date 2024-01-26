@@ -21,13 +21,13 @@ Using the `cd` command with a directory as an argument will change the directory
 ### path to file as argument
 Call the `cd` command as `cd /lecture1/Hello.java` in the directory `/home`
 
-error: yes
+error: yes because a file can't be used as an argument with the `cd` command
 ```
 [user@sahara ~]$ cd /lecture1/Hello.java
 bash: cd: /lecture1/Hello.java: No such file or directory
 [user@sahara ~]$ 
 ```
-Using the `cd` commad with a path to a file as an argument will result in an error. The output was `bash: cd: /lecture1/Hello.java: No such file or directory` because the file `Hello.java` was used as the argument with the `cd` command, and `Hello.java` is not a directory.
+Using the `cd` command with a path to a file as an argument will result in an error. The output was `bash: cd: /lecture1/Hello.java: No such file or directory` because the file `Hello.java` was used as the argument with the `cd` command, and `Hello.java` is not a directory.
 ## `ls` command
 ### no arguments
 Call the `ls` command with no arguments in the directory `/home`
@@ -77,7 +77,7 @@ Using the `cat` command with no arguments will place the terminal in a state whe
 ### path to directory as argument
 Call the `cat` command as `cat lecture1` in the directory `/home`
 
-error: yes
+error: yes because the `cat` command can't be used with a directory as the argument
 ```
 [user@sahara ~]$ cat lecture1
 cat: lecture1: Is a directory
