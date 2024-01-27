@@ -44,9 +44,10 @@ class ChatServer {
 }
 
 ```
-
+### Screenshot 1 (localhost:4000/add-message?s=Hello&user=jpolitz)
 ![Image](/ChatServer1.png)
 
+### Screenshot 2 (localhost:4000/add-message?s=How%20are%20yOu&user=yash)
 ![Image](/ChatServer2.png)
 
 ## Part 2 SSH Keys
