@@ -47,9 +47,25 @@ class ChatServer {
 ### Screenshot 1 (localhost:4000/add-message?s=Hello&user=jpolitz)
 ![Image](/ChatServer1.png)
 
+#### Methods Called
+* `handleRequest`:
+* `getPath`:
+* `contains`:
+* `getQuery`:
+* `split`:
+* `equals`:
+* `format`:
+
+#### Values
+* String[] arguments
+* String [] messageArguments
+* String[] userArguments
+* String output
+
 ### Screenshot 2 (localhost:4000/add-message?s=How%20are%20yOu&user=yash)
 ![Image](/ChatServer2.png)
 
+#### Methods Called
 ## Part 2 SSH Keys
 
 ## Part 3 What I Learned
