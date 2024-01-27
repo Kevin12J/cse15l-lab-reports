@@ -45,6 +45,10 @@ class ChatServer {
 
 ```
 
-![Image](/ChatServer1)
+![Image](/ChatServer1.png)
 
-![Image](/ChatServer2)
+![Image](/ChatServer2.png)
+
+## Part 2 SSH Keys
+
+## Part 3 What I Learned
