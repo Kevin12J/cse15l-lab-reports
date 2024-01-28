@@ -44,7 +44,7 @@ class ChatServer {
 }
 
 ```
-### Screenshot 1 (localhost:4000/add-message?s=Hello&user=jpolitz)
+### Screenshot 1 (localhost:4000/add-message?s=Hi how are you?&user=Kevin)
 ![Image](/ChatServer1.png)
 
 #### Methods Called
@@ -57,12 +57,12 @@ class ChatServer {
 * `String.format("",...)`: Static method of the String class that returns a formatted String. It takes in a String containing format Strings and additional parameters for each format String. 
 
 #### Values
-* `String[] arguments`: `arguments` contains the String array `["s=How are y0u]`
-* `String [] messageArguments`:
-* `String[] userArguments`:
-* `String output`:
+* `String[] arguments`: `arguments` contains the String array `["s=Hi how are you?","user=Kevin"]` after the line `String[] arguments=url.getQuery().split("&");` runs
+* `String [] messageArguments`: `messageArguments` contains the String array `["s","Hi how are you?"]` after the line `String[] messageArguments=arguments[0].split("=");` runs
+* `String[] userArguments`: `userArguments` contains the String array `["user","Kevin"]` after the line `String[] userArguments=arguments[1].split("=");` runs
+* `String output`: `output` contains the String `"Kevin: Hi how are you?\n"` after the line `output+=String.format("%s: %s\n", userArguments[1],messageArguments[1]);` runs
 
-### Screenshot 2 (localhost:4000/add-message?s=How%20are%20yOu&user=yash)
+### Screenshot 2 (localhost:4000/add-message?s=I am great thanks for asking!&user=Aaron)
 ![Image](/ChatServer2.png)
 
 #### Methods Called
