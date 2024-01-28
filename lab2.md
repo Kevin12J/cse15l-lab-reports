@@ -96,3 +96,5 @@ The field `output` in the `ChatServer` class was changed from `"Kevin: Hi how ar
 ![image](/Login.png)
 
 ## Part 3 What I Learned
+
+In week 3, I learned about setting up SSH keys which allow me to not enter a password when I SSH into a server. This can help make the login process much easier since I had to use the ieng6 servers last quarter, but I had to enter my password each time. I also learned about the `scp` command which is a useful tool for securely transferring files between device. I used `scp` to transfer my public key from my computer to the ieng6 server. 
