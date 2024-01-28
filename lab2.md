@@ -48,13 +48,13 @@ class ChatServer {
 ![Image](/ChatServer1.png)
 
 #### Methods Called
-* `handleRequest`:
-* `getPath`:
-* `contains`:
-* `getQuery`:
-* `split`:
-* `equals`:
-* `format`:
+* `handleRequest(URI url)`: Takes in URI object as the paremeter.
+* `.getPath()`: Method called on URI object to return the path of the URL as a String.
+* `.contains("")`: Method called on String that returns true if the String in the paremeter is in the String that the method was called on. Otherwise it returns false.
+* `.getQuery()`: Method called on URI object to return the query as a String.
+* `.split("")`: Method called on String that takes a String as the parameter and splits the String into an array based on the parameter.
+* `.equals("")`: Method called on Object that takes another Object as the parameter and returns true is the Object contents are equal. Otherwise it returns false. 
+* `String.format("",)`: Static method of the String class that returns a formatted String. It takes in a String containing format Strings and additional parameters for each format String. 
 
 #### Values
 * String[] arguments
