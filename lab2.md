@@ -54,18 +54,32 @@ class ChatServer {
 * `.getQuery()`: Method called on URI object to return the query as a String.
 * `.split("")`: Method called on String that takes a String as the parameter and splits the String into an array based on the parameter.
 * `.equals("")`: Method called on Object that takes another Object as the parameter and returns true is the Object contents are equal. Otherwise it returns false. 
-* `String.format("",)`: Static method of the String class that returns a formatted String. It takes in a String containing format Strings and additional parameters for each format String. 
+* `String.format("",...)`: Static method of the String class that returns a formatted String. It takes in a String containing format Strings and additional parameters for each format String. 
 
 #### Values
-* String[] arguments
-* String [] messageArguments
-* String[] userArguments
-* String output
+* `String[] arguments`: `arguments` contains the String array `["s=How are y0u]`
+* `String [] messageArguments`:
+* `String[] userArguments`:
+* `String output`:
 
 ### Screenshot 2 (localhost:4000/add-message?s=How%20are%20yOu&user=yash)
 ![Image](/ChatServer2.png)
 
 #### Methods Called
+`handleRequest(URI url)`: Takes in URI object as the paremeter.
+* `.getPath()`: Method called on URI object to return the path of the URL as a String.
+* `.contains("")`: Method called on String that returns true if the String in the paremeter is in the String that the method was called on. Otherwise it returns false.
+* `.getQuery()`: Method called on URI object to return the query as a String.
+* `.split("")`: Method called on String that takes a String as the parameter and splits the String into an array based on the parameter.
+* `.equals("")`: Method called on Object that takes another Object as the parameter and returns true is the Object contents are equal. Otherwise it returns false. 
+* `String.format("",...)`: Static method of the String class that returns a formatted String. It takes in a String containing format Strings and additional parameters for each format String.
+
+#### Values
+* String[] arguments:
+* String [] messageArguments:
+* String[] userArguments:
+* String output:
+
 ## Part 2 SSH Keys
 
 ## Part 3 What I Learned
