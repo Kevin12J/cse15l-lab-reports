@@ -57,6 +57,7 @@ class ChatServer {
 * `String.format("",...)`: Static method of the String class that returns a formatted String. It takes in a String containing format Strings and additional parameters for each format String. 
 
 #### Values
+* `URI url` is the paremeter of `handleRequest` and it is a `URI` object with a field for `"localhost:4000/add-message?s=Hi how are you?&user=Kevin"`
 * `String[] arguments`: `arguments` contains the String array `["s=Hi how are you?","user=Kevin"]` after the line `String[] arguments=url.getQuery().split("&");` runs
 * `String [] messageArguments`: `messageArguments` contains the String array `["s","Hi how are you?"]` after the line `String[] messageArguments=arguments[0].split("=");` runs
 * `String[] userArguments`: `userArguments` contains the String array `["user","Kevin"]` after the line `String[] userArguments=arguments[1].split("=");` runs
@@ -68,7 +69,7 @@ The field `output` in the `ChatServer` class was changed from `""` to `"Kevin: H
 ![Image](/ChatServer2.png)
 
 #### Methods Called
-`handleRequest(URI url)`: Takes in URI object as the paremeter.
+* `handleRequest(URI url)`: Takes in URI object as the paremeter.
 * `.getPath()`: Method called on URI object to return the path of the URL as a String.
 * `.contains("")`: Method called on String that returns true if the String in the paremeter is in the String that the method was called on. Otherwise it returns false.
 * `.getQuery()`: Method called on URI object to return the query as a String.
@@ -77,6 +78,7 @@ The field `output` in the `ChatServer` class was changed from `""` to `"Kevin: H
 * `String.format("",...)`: Static method of the String class that returns a formatted String. It takes in a String containing format Strings and additional parameters for each format String.
 
 #### Values
+* `URI url` is the paremeter of `handleRequest` and it is a `URI` object with a field for `"localhost:4000/add-message?s=I am great thanks for asking!&user=Aaron"`
 * `String[] arguments`: `arguments` contains the String array `["s=I am great thanks for asking!","user=Aaron"]` after the line `String[] arguments=url.getQuery().split("&");` runs
 * `String [] messageArguments`: `messageArguments` contains the String array `["s","I am great thanks for asking!"]` after the line `String[] messageArguments=arguments[0].split("=");` runs
 * `String[] userArguments`: `userArguments` contains the String array `["user","Aaron"]` after the line `String[] userArguments=arguments[1].split("=");` runs
