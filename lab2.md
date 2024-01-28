@@ -86,4 +86,13 @@ The field `output` in the `ChatServer` class was changed from `"Kevin: Hi how ar
 
 ## Part 2 SSH Keys
 
+### Private key
+![image](/local.png)
+
+### Public key
+![image](/ieng6.png)
+
+### Logging in
+![image](/Login.png)
+
 ## Part 3 What I Learned
