@@ -62,6 +62,8 @@ class ChatServer {
 * `String[] userArguments`: `userArguments` contains the String array `["user","Kevin"]` after the line `String[] userArguments=arguments[1].split("=");` runs
 * `String output`: `output` contains the String `"Kevin: Hi how are you?\n"` after the line `output+=String.format("%s: %s\n", userArguments[1],messageArguments[1]);` runs
 
+The field `output` in the `ChatServer` class was changed from `""` to `"Kevin: Hi how are you?\n"`.
+
 ### Screenshot 2 (localhost:4000/add-message?s=I am great thanks for asking!&user=Aaron)
 ![Image](/ChatServer2.png)
 
