@@ -29,7 +29,7 @@ static int[] reversed(int[] arr) {
   return arr;
 }
 ```
-One of the bugs in the code was in the line `arr[i] = newArray[arr.length - i -1];` because it assigned the values in `newArray` which were all initialized to `0` to their corresponding index in `arr`. The second bug was in the line `return arr;` because the original array was being returned instead of a new array.
+One of the bugs in the code was in the line `arr[i] = newArray[arr.length - i -1];` because it assigned the values in `newArray` which were all initialized to `0` in reversed order to `arr`. The second bug was in the line `return arr;` because the original array was being returned instead of a new array.
 #### Code After
 ```
 static int[] reversed(int[] arr) {
@@ -40,6 +40,6 @@ static int[] reversed(int[] arr) {
   return newArray;
 }
 ```
-
+The first change was changing `arr[i] = newArray[arr.length - i -1];` to `newArray[i] = arr[arr.length - i - 1];`. This fixed the bug with the values in `newArray` being assigned to `arr` so now the values in `arr` get put into `newArray` in reversed order. The second change was changing `return arr;` to `return newArray`. This fixed the bug in which the wrong array was being returned so now the new array will be returned.
 
 ## Part 2: Researching Commands
