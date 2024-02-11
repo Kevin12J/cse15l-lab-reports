@@ -19,4 +19,10 @@ static void reverseInPlace(int[] arr) {
   }
 }
 ```
+#### Symptom
+
+#### Bug
+
+### input that doesn't induce a failure
+
 ## Part 2: Researching Commands
