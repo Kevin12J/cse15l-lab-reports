@@ -1,16 +1,24 @@
 # Lab Report 3: Bugs and Commands
 ## Part 1: Bugs
-### Failure inducing code
-#### Junit test in ArrayTests.java
+### Failure inducing input (JUnit test)
 ```
 @Test 
-public void testReverseInPlace() {
-  int[] input1 = { 3 ,4};
-  ArrayExamples.reverseInPlace(input1);
-  assertArrayEquals(new int[]{ 4,3 }, input1);
+public void testReversedOneElement(){
+  int[] input1={};
+  assertArrayEquals(new int[]{}, ArrayExamples.reversed(input1));
 }
 ```
-#### Method in ArrayExamples.java
+###  Input that doesn't induce failure (JUnit test)
+```
+@Test
+public void testReversedMultipleElement() {
+  int[] input1 = {1,2,3,4};
+  assertArrayEquals(new int[]{4,3,2,1}, ArrayExamples.reversed(input1));
+}
+```
+### Symptom (running JUnit tests)
+![image}(
+### Method in ArrayExamples.java
 ```
 // Changes the input array to be in reversed order
 static void reverseInPlace(int[] arr) {
@@ -19,9 +27,8 @@ static void reverseInPlace(int[] arr) {
   }
 }
 ```
-#### Symptom
 
-#### Bug
+### Bug
 
 ### input that doesn't induce a failure
 
