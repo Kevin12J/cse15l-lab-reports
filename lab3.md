@@ -29,6 +29,7 @@ static int[] reversed(int[] arr) {
   return arr;
 }
 ```
+One of the bugs in the code was in the line `arr[i] = newArray[arr.length - i -1];` because it assigned the values in `newArray` which were all initialized to `0` to their corresponding index in `arr`. The second bug was in the line `return arr;` because the original array was being returned instead of a new array.
 #### Code After
 ```
 static int[] reversed(int[] arr) {
