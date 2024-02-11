@@ -43,3 +43,9 @@ static int[] reversed(int[] arr) {
 The first change was changing `arr[i] = newArray[arr.length - i -1];` to `newArray[i] = arr[arr.length - i - 1];`. This fixed the bug with the values in `newArray` being assigned to `arr` so now the values in `arr` get put into `newArray` in reversed order. The second change was changing `return arr;` to `return newArray`. This fixed the bug in which the wrong array was being returned so now the new array will be returned.
 
 ## Part 2: Researching Commands
+### `grep` 
+#### command-line option #1:
+#### command-line option #2:
+#### command-line option #3:
+#### command-line option #4:
+
