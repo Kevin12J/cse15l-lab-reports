@@ -18,18 +18,27 @@ public void testReversedMultipleElement() {
 ```
 ### Symptom (running JUnit tests)
 ![image](/tests.png)
-### Method in ArrayExamples.java
+### Bug
+#### Code Before
 ```
-// Changes the input array to be in reversed order
-static void reverseInPlace(int[] arr) {
+static int[] reversed(int[] arr) {
+  int[] newArray = new int[arr.length];
   for(int i = 0; i < arr.length; i += 1) {
-    arr[i] = arr[arr.length - i - 1];
+    arr[i] = newArray[arr.length - i - 1];
   }
+  return arr;
+}
+```
+#### Code After
+```
+static int[] reversed(int[] arr) {
+  int[] newArray = new int[arr.length];
+  for(int i = 0; i < arr.length; i += 1) {
+    newArray[i] = arr[arr.length - i - 1];
+  }
+  return newArray;
 }
 ```
 
-### Bug
-
-### input that doesn't induce a failure
 
 ## Part 2: Researching Commands
