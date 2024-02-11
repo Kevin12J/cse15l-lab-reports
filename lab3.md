@@ -17,7 +17,7 @@ public void testReversedMultipleElement() {
 }
 ```
 ### Symptom (running JUnit tests)
-![image}(
+![image](/tests.png)
 ### Method in ArrayExamples.java
 ```
 // Changes the input array to be in reversed order
