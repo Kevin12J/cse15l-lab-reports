@@ -44,7 +44,23 @@ The first change was changing `arr[i] = newArray[arr.length - i -1];` to `newArr
 
 ## Part 2: Researching Commands
 ### `grep` 
-#### command-line option #1: `--invert-match` (found using `man grep`)
+#### command-line option #1 `-r` (found using `man grep`)
+#### command-line option #2: `--exclude-dir` (found using `man grep`)
+#### command-line option #3: `-n`,`--line-number` (found using `man grep`)
+##### Calling `grep -n pineapple  *.txt ` in the `technical/biomed` directory
+```
+1472-6882-1-10.txt:192:          antibiotics and the ananase enzyme (from the pineapple 
+gb-2002-3-10-research0053.txt:439:          in pineapple (~70% to 
+```
+##### Calling `grep --line-number funding CONFIG_STANDARDS.txt` in `technical/government/About_LSC` directory
+```
+41:state bar association, state IOLTA funding entity, staffed legal
+90:LSC operates under a statutory mandate to make funding decisions
+214:within the state facilitate efforts to secure new funding for, and
+215:where appropriate allocate current funding to new projects and
+316:funding?
+```
+#### command-line option #4: `--invert-match` (found using `man grep`)
 ##### calling `grep --invert-match '^$' CONFIG_STANDARDS.txt` in the `technical/governmet/About_LSC` directory
 ```
 STATE PLANNING CONFIGURATION STANDARDS Final Task Force Report
@@ -342,20 +358,4 @@ $1,486 $291 -$1,777 $1,030 $322 $50 $1,402 $456 ($31) ($50) $375
 
 
 ```
-#### command-line option #2: `--exclude-dir` (found using `man grep`)
-#### command-line option #3: `-n`,`--line-number` (found using `man grep`)
-##### Calling `grep -n pineapple  *.txt ` in the `technical/biomed` directory
-```
-1472-6882-1-10.txt:192:          antibiotics and the ananase enzyme (from the pineapple 
-gb-2002-3-10-research0053.txt:439:          in pineapple (~70% to 
-```
-##### Calling `grep --line-number funding CONFIG_STANDARDS.txt` in `technical/government/About_LSC` directory
-```
-41:state bar association, state IOLTA funding entity, staffed legal
-90:LSC operates under a statutory mandate to make funding decisions
-214:within the state facilitate efforts to secure new funding for, and
-215:where appropriate allocate current funding to new projects and
-316:funding?
-```
-#### command-line option #4: `--colour=[when]`,`--color=[when]` (found using `man grep`)
 
