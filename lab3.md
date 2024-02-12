@@ -45,14 +45,57 @@ The first change was changing `arr[i] = newArray[arr.length - i -1];` to `newArr
 ## Part 2: Researching Commands
 ### `grep` 
 #### command-line option #1 `-r` (found using `man grep`)
+##### calling `grep -r restaurant` in the `technical` directory
+```
+./government/About_LSC/commission_report.txt:restaurant work, and day labor. See April Testimony at 16
+./government/Media/Legal-aid_chief.txt:Koch owns the Eustis Pool Hall, a local landmark and restaurant,
+./government/Media/Workers_aid_center.txt:primarily in the garment, construction, restaurant and domestic
+./government/Media/Working_for_Free.txt:matched wits with the partners over lunch at an upscale restaurant.
+./biomed/1471-2458-3-2.txt:          outside the home (such as workplace or restaurants). They
+./911report/chapter-13.4.txt:                At the time of the February 1, 2000, restaurant encounter, Bin Don, a U.S. citizen,
+./911report/chapter-5.txt:                his faith; for example, he specifically avoided restaurants that cooked with or
+./911report/chapter-7.txt:                Bayoumi and Caysan Bin Don at a halal food restaurant on Venice Boulevard in Culver
+./911report/chapter-7.txt:                the restaurant but did not specify the address. They did not like Los Angeles and
+./911report/chapter-7.txt:                then left the restaurant and went their separate ways.
+./911report/chapter-7.txt:                mosque is close to the restaurant and Bayoumi had visited it, and the surrounding
+./911report/chapter-9.txt:                World restaurant on the 106th floor, from which calls had been made to the PAPD
+./911report/chapter-9.txt:                been taking shelter in the restaurant and assisted them in evacuating. Up above, at
+```
+#### calling `grep -r FBI` in the `technical/government` directory
+```
+./Gen_Account_Office/Testimony_Jul15-2002_d02940t.txt:Investigation (FBI) and create a successful Department of Homeland
+./Gen_Account_Office/Testimony_Jul15-2002_d02940t.txt:Success, GAO-02-886T (Washington, D.C.: June 25, 2002) and FBI
+./Gen_Account_Office/Testimony_Jul15-2002_d02940t.txt:major transformation efforts, like the FBI, the Internal Revenue
+./Gen_Account_Office/Oct15-2001_d0224.txt:with the Federal Bureau of Investigation's (FBI) National
+./Gen_Account_Office/Oct15-2001_d0224.txt:Cleveland FBI Field Office to build a better relationship
+./Gen_Account_Office/Oct15-2001_d0224.txt:between the FBI and the private sector in addressing cyber and
+./Gen_Account_Office/Oct15-2001_d0224.txt:which is an interagency center housed at the FBI, in conjunction
+./Gen_Account_Office/Oct15-2001_d0224.txt:development of local chapters associated with each of the FBI's 56
+./Gen_Account_Office/Testimony_Jul17-2002_d02957t.txt:Investigation (FBI), the U.S. Marshals Service, the Department of
+./Gen_Account_Office/Testimony_Jul17-2002_d02957t.txt:Administration (TSA), the DOD, the FBI, and the CIA. Congress
+./Gen_Account_Office/Testimony_Jul17-2002_d02957t.txt:Reorganization FBI Reorganization: Initial
+./Media/Raising_the_Bar.txt:FBI
+```
 #### command-line option #2: `--exclude-dir` (found using `man grep`)
+##### callling `grep -r restaurant --exclude-dir 911report` in `technical` directory
+```
+./government/About_LSC/commission_report.txt:restaurant work, and day labor. See April Testimony at 16
+./government/Media/Legal-aid_chief.txt:Koch owns the Eustis Pool Hall, a local landmark and restaurant,
+./government/Media/Workers_aid_center.txt:primarily in the garment, construction, restaurant and domestic
+./government/Media/Working_for_Free.txt:matched wits with the partners over lunch at an upscale restaurant.
+./biomed/1471-2458-3-2.txt:          outside the home (such as workplace or restaurants). They
+```
+##### calling `grep -r FBI --exclude-dir Gen_Account_Office` in `technical/government` directory
+```
+./Media/Raising_the_Bar.txt:FBI
+```
 #### command-line option #3: `-n`,`--line-number` (found using `man grep`)
-##### Calling `grep -n pineapple  *.txt ` in the `technical/biomed` directory
+##### calling `grep -n pineapple  *.txt ` in the `technical/biomed` directory
 ```
 1472-6882-1-10.txt:192:          antibiotics and the ananase enzyme (from the pineapple 
 gb-2002-3-10-research0053.txt:439:          in pineapple (~70% to 
 ```
-##### Calling `grep --line-number funding CONFIG_STANDARDS.txt` in `technical/government/About_LSC` directory
+##### calling `grep --line-number funding CONFIG_STANDARDS.txt` in `technical/government/About_LSC` directory
 ```
 41:state bar association, state IOLTA funding entity, staffed legal
 90:LSC operates under a statutory mandate to make funding decisions
@@ -60,302 +103,27 @@ gb-2002-3-10-research0053.txt:439:          in pineapple (~70% to
 215:where appropriate allocate current funding to new projects and
 316:funding?
 ```
-#### command-line option #4: `--invert-match` (found using `man grep`)
-##### calling `grep --invert-match '^$' CONFIG_STANDARDS.txt` in the `technical/governmet/About_LSC` directory
+#### command-line option #4: `-m`,`--max-count` (found using `man grep`)
+##### calling `grep -m 5 911 chapter-9.txt` in the `technical/911report` directory
 ```
-STATE PLANNING CONFIGURATION STANDARDS Final Task Force Report
-- Board Approved
-November 2001
-LEGAL SERVICES CORPORATION
-STATE PLANNING CONFIGURATION STANDARDS
-Final Task Force Report - Board Approved
-I. PREFACE
-This document-- Legal Services Corporation State Planning
-Configuration Standards -- presents in one place a comprehensive
-compilation of the standards LSC recipients and Designated State
-Planning Bodies (DSPB's)1 should consider and that the Legal
-Services Corporation will use in considering the configuration of a
-state's legal services delivery system.2
-Determination of the most appropriate configuration of programs
-in a given state is a part of the broader state planning process
-and cannot be divorced from consideration of the overall goals of
-the state delivery system, the state's past performance, current
-status, and progress towards and plans for achieving those goals.
-The Legal Services Corporation expects its grantees in each state
-and territory to work with one another and with a broad spectrum of
-other equal justice stakeholders3 to develop comprehensive,
-integrated statewide civil legal services delivery systems which
-are responsive to the most compelling needs of eligible clients and
-client communities, ensure the highest and most strategic use of
-all available resources, maximize the opportunity for clients
-throughout the state to receive timely, effective and appropriate
-legal services in the present and in the future, and operate
-efficiently and effectively.4
-1 A "Designated State Planning Body" is an entity that has been
-established and charged with responsibility for coordinating state
-legal services delivery planning. Such planning entities are
-generally composed of an array of civil equal justice delivery
-stakeholders, including but not limited to representatives from the
-state bar association, state IOLTA funding entity, staffed legal
-services programs (LSC and non-LSC), the pro bono community, client
-organizations, clients and others with an interest and commitment
-to effective delivery of civil legal services to poor and
-vulnerable people in the state.
-2 For LSC's policies regarding internal review of configuration
-recommendations, see Legal Services Corporation Reconfiguration
-Review Process, September 21, 2001.
-3 State planning processes, including the participants, will
-vary from state to state, and LSC does not require the same process
-or participation in each state. However, LSC continues to encourage
-broad civil equal justice stakeholder participation at the state
-level and expects its grantees to do the same.
-4 For a fuller articulation of these goals, see LSC Program
-Letters 98-1, 98-6, and 2000-7, and Strategic Directions 2000-2005,
-adopted by the LSC Board of Directors on January 28, 2000.
-While LSC will continue to utilize a variety of approaches, LSC
-views service area configuration as a key structural component of a
-comprehensive set of strategies employed to promote the creation
-and sustainability of comprehensive, integrated state civil equal
-justice communities. LSC has and will continue to require its
-grantees and encourage DSPB's to critically examine the degree to
-which the configuration of LSC grantees in any given state promotes
-these ends.
-The determination of the configuration that will best serve
-clients throughout a particular state ultimately involves a
-balancing of factors and the application of judgment to a host of
-considerations. Each state is different, and in a number of states,
-intra-state regions differ significantly as well. Some standards
-relevant to decisions affecting configuration can, in context,
-suggest different conclusions, depending upon the state or
-geographic region involved. Each state's configuration must be
-viewed on the totality of the circumstances.
-LSC values the judgments of designated state planning bodies
-that have addressed the question and will normally give great
-weight to those judgments that have been developed through an
-inclusive, thoughtful, and client-centered process. LSC will only
-adopt a different configuration based upon good and substantial
-reasons clearly articulated in writing and tied to the specific
-standards enumerated herein.
-These standards shall guide the state planning process on
-reconfiguration and shall serve as the criteria for decisions of
-LSC. Under these guidelines, LSC will exercise its statutory
-responsibility to insure that grants and contracts are made so as
-to provide the most economical and effective delivery of legal
-assistance to persons in both urban and rural areas.5
-II. LSC's Statutory Responsibility
-LSC operates under a statutory mandate to make funding decisions
-that maximize the effective and economical delivery of high quality
-legal services to eligible clients throughout the state within a
-comprehensive, integrated delivery system. This duty can be
-effectively carried out through a process that recognizes the
-importance of creating enduring capacities at the state level to
-support legal services delivery systems.
-In some states, it may be possible to develop and implement
-statewide initiatives to improve service delivery, increase
-resources and enhance the
-5 Legal Services Corporation Act, Section 1007(a)(3).
-capacity of the system to meet the civil legal needs of
-low-income people throughout the state without altering service
-areas or historical relationships. In other states, the very
-development and implementation of such initiatives may require
-reconfiguration of organizational relationships and service
-areas.
-III. Configuration Standards
-In making a determination as to whether the configuration of
-LSC-funded providers set out in the state plan will maximize the
-effective and economical delivery of high quality legal services to
-eligible clients throughout the state within a comprehensive,
-integrated delivery system, both in the present and in the future,
-LSC will review the strategies outlined in the state plan against
-the following standards:
-1. The Configuration of LSC-Funded Program Will Maximize Access
-for Clients Throughout the State
-a.
-Area of Inquiry--Does the configuration of programs
-within the state facilitate the development and sustainability of a
-delivery network that, within financial resources and subject to
-appropriate priority decisions under 45 C.F.R. 1620, provides
-low-income persons throughout the state, to the extent reasonably
-possible, broad, prompt, and relatively equitable access to the
-legal services it furnishes regardless of such obstacles as
-physical or mental disability, age, geographical isolation, race,
-gender, sexual orientation, culture, or language?
-b.
-Area of Inquiry--Does the configuration of programs
-within the state take into account the socio-cultural and economic
-affinities in place that are most relevant to the legal issues
-facing low-income clients and client communities?
-c.
-Area of Inquiry--Does the configuration of programs
-within the state take into account the geographic, physical, and
-historical distinctions and affinities within the state or
-territory of most relevance to clients and their
-communities?
-2. The Configuration of LSC-Funded Programs Will Maximize
-Effective Legal Services to Clients Throughout the State.
-a. Area of Inquiry--Does the configuration of programs within
-the state, within financial resources and subject to appropriate
-priority decisions under 45 C.F.R. 1620, promote relative equity in
-the availability of the full range of client service capacities
-necessary to meet the full continuum of client legal needs
-regardless of where in the state clients live?
-b.
-Area of Inquiry--Does the configuration of programs
-within the state enhance opportunities to attract attorneys and
-paralegals who can provide expertise, skills, cultural relevancy
-and cultural competencies necessary to address the most pressing
-legal needs of clients?
-c.
-Area of Inquiry--Does the configuration of programs
-promote the likelihood that all providers will have relatively
-equal access to the resources, expertise, information and
-experience necessary to provide high quality legal services
-consistent with state and national standards of provider
-performance?
-d.
-Area of Inquiry--Does the configuration of programs
-facilitate the efficient statewide coordination of legal work and
-provide an efficient means of establishing and maintaining a
-statewide capacity to provide training, monitor developments,
-disseminate relevant information and provide expert assistance
-necessary for the delivery of high quality assistance?
-e.
-Area of Inquiry--Does the configuration of programs
-within the state facilitate the ability of legal services providers
-to coordinate their efforts to expand client access to the courts,
-enhance self-help opportunities for low-income persons, and provide
-effective, culturally relevant, systematic and comprehensive
-outreach and preventive legal education and advice to the
-client-eligible population in the state?
-f.
-Area of Inquiry--Does the configuration of programs
-within the state take into account the location and configuration
-of governmental, judicial, human services and other relevant
-regional delivery planning areas in the state?
-g.
-Area of Inquiry--Does the configuration of programs
-within the state facilitate the ability of legal services providers
-and other civil equal justice partners to coordinate their research
-and their efforts to stay abreast of developments in the delivery
-of legal services?
-h.
-Area of Inquiry--Does the configuration of programs
-within the state facilitate efforts to secure new funding for, and
-where appropriate allocate current funding to new projects and
-experimental models for serving clients or strengthening system
-capacities?
-i.
-Area of Inquiry--Does the configuration of programs
-within the state facilitate uniform and consistent approaches to
-accountability to clients, client communities and
-funders?
-3. The Delivery System Will Be Designed and Configured to Make
-the Highest and Best Use of Available Resources.
-a.
-Area of Inquiry--Does the configuration of programs
-within the state facilitate the coordination of resource
-development efforts to maintain existing resources and to generate
-and leverage additional resources, including such efforts as
-unified approaches to major potential public sources, liaison with
-and maintenance of existing statewide resources, and coordinated
-technical assistance for local fundraising?
-b.
-Area of Inquiry--Does the configuration of programs
-within the state provide, to the extent reasonably possible,
-relative equity in the investment of civil equal justice resources
-(federal, state, private, and in-kind/pro bono) throughout the
-state?
-c.
-Area of Inquiry--Does the configuration of programs
-within the state facilitate the coordination of efforts and a
-capacity to utilize new and emerging technology to promote
-efficiency, coordinate and collaborate with other entities, improve
-quality and expand services to clients regardless of where they
-reside or other access barriers they experience?
-d.
-Area of Inquiry--Does the configuration of programs
-within the state maximize the potential for effective and efficient
-administration and minimize the potential for duplication of
-capacities, services, systems and/or administration?
-e.
-Area of Inquiry--Does the configuration of programs
-within the state facilitate strong coordination and collaboration
-with, and a high degree of involvement in services to low-income
-clients by, the private bar throughout the state? Will it maintain
-and enhance state and local bar relations? Will it promote, where
-appropriate, the sharing of urban-based private capacity with the
-needs of rural and isolated clients?
-4. The Delivery System Will Be Designed and Configured to
-Respond Effectively and Efficiently to New and Emerging Client
-Needs and Other Changes Affecting the Delivery of Legal Services to
-the Poor.
-a.
-Area of Inquiry-- Does the configuration of programs
-within the state enhance the likelihood of achieving the intended
-goals and objectives of a comprehensive, integrated and
-client-centered legal services delivery system including, but not
-limited to service effectiveness/quality; full range of legal
-services to address most pressing legal needs of eligible clients;
-efficiency; equity and ease in terms of client access; greater
-involvement by members of the private bar in the legal lives of
-clients; and client-community empowerment?
-b.
-Area of Inquiry--Does the configuration of programs
-within the state facilitate efficient, ongoing assessment of
-demographic trends, changes in laws and public programs affecting
-low-income persons?
-c.
-Area of Inquiry--Does the configuration of programs
-within the state operate to ensure that there is a regular review
-of system capacities and resources throughout the state and
-adjustments in their deployment to respond to new and emerging
-client needs, legal trends and other changes affecting the delivery
-of legal services to the poor?
-d.
-Area of Inquiry--Does the configuration of programs
-within the state operate to ensure within available resources that
-all components of the delivery system have sufficient resources and
-support to adjust to changes in client needs, staff or
-funding?
-e.
-Area of Inquiry-- Does the configuration of providers
-within the state promote the system's ability and capacity to
-develop, nurture, promote, recruit and retain strong and effective
-staff and leaders who are diverse and culturally
-competent?
+                Twin Towers. The 911 emergency call system was overwhelmed. The general evacuation
+                (which was not monitored by a dispatcher).17 The NYPD also supervised the city's 911
+                of emergency response. When a 911 call concerned a fire, it was transferred to FDNY
+                which had a center in each of the five boroughs. All 911 calls concerning fire
+            Civilians, Fire Safety Personnel, and 911 Calls
 ```
-##### calling `grep --invert-match e Redacted_Study.txt` in the `technical/government/Post_Rate_Comm` directory
+##### calling `grep --max-count 5 911 *.txt` in the `technical/911report` directory
+```
+chapter-13.5.txt:                received by civilians in the towers based on (1) calls to NYPD 911 from or
+chapter-13.5.txt:                September 11, 2001 (hereafter "Commission analysis of 911/PAPD calls"). Everyone
+chapter-13.5.txt:                Commission analysis of 911/PAPD calls; Civilian interview 17 (May 11, 2004);
+chapter-13.5.txt:                analysis of 911/PAPD calls; Port Authority transcripts of recorded Port Authority
+chapter-13.5.txt:            32. Commission analysis of 911/PAPD calls.
+chapter-9.txt:                Twin Towers. The 911 emergency call system was overwhelmed. The general evacuation
+chapter-9.txt:                (which was not monitored by a dispatcher).17 The NYPD also supervised the city's 911
+chapter-9.txt:                of emergency response. When a 911 call concerned a fire, it was transferred to FDNY
+chapter-9.txt:                which had a center in each of the five boroughs. All 911 calls concerning fire
+chapter-9.txt:            Civilians, Fire Safety Personnel, and 911 Calls
 ```
 
-
-
-
-TABLE 1
-EFFECT OF REPLACING TERMINAL DUES WITH DOMESTIC POSTAGE ON THE
-FINANCES OF INDUSTRIALIZED AND DEVELOPING COUNTRIES AND THE POSTAL
-SERVICE (Amounts in Thousands)
-
-(L.4 - L.5) ($153,922) ($18,979) ($172,900)
-L.1. 3/ WT 11, Col. 1, L. 1 / 1000. 4/ WT 13, Col.3, L. 1. 5/ WT
-11, Col. 1, L. 2 / 1000. 6/ WT 13, Col.4, L. 4. 7/ WT 11, Col. 2,
-L. 1 / 1000. 8/ WT 13, Col. 3, L. 4. 9/ WT 11, Col, 2, L. 2 /
-1000
-(-$172.9 minus -$113.8) to -$ million (-$172.9 minus - $ ).
-
-
-TABLE 2
-EFFECT OF REPLACING TERMINAL DUES WITH DOMESTIC POSTAGE ON
-INTERNATIONAL MAIL'S CONTRIBUTION TO INSTITUTIONAL COST AND COST
-COVERAGE (Amounts in Millions)
-(1) (2) (3) (4)=(1)+(2)+(3)
-$1,486 $291 -$1,777 $1,030 $322 $50 $1,402 $456 ($31) ($50) $375
-144.3% 90.4% -126.7%
-(5) (6) (7) (8)=(5)+(6)+(7)
--119.8%
-3/ Col. 1, L. 2 + WT 13, Col. 5, L.1 / 1000 + WT 13, Col. 5, L.4
-/ 1000 4/ Col. 2, L.1 + Col. 3, L. 3/ 1,000,000
-
-
-
-```
 
