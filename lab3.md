@@ -308,7 +308,40 @@ develop, nurture, promote, recruit and retain strong and effective
 staff and leaders who are diverse and culturally
 competent?
 ```
-##### calling `grep 
+##### calling `grep --invert-match e Redacted_Study.txt` in the `technical/government/Post_Rate_Comm` directory
+```
+
+
+
+
+TABLE 1
+EFFECT OF REPLACING TERMINAL DUES WITH DOMESTIC POSTAGE ON THE
+FINANCES OF INDUSTRIALIZED AND DEVELOPING COUNTRIES AND THE POSTAL
+SERVICE (Amounts in Thousands)
+
+(L.4 - L.5) ($153,922) ($18,979) ($172,900)
+L.1. 3/ WT 11, Col. 1, L. 1 / 1000. 4/ WT 13, Col.3, L. 1. 5/ WT
+11, Col. 1, L. 2 / 1000. 6/ WT 13, Col.4, L. 4. 7/ WT 11, Col. 2,
+L. 1 / 1000. 8/ WT 13, Col. 3, L. 4. 9/ WT 11, Col, 2, L. 2 /
+1000
+(-$172.9 minus -$113.8) to -$ million (-$172.9 minus - $ ).
+
+
+TABLE 2
+EFFECT OF REPLACING TERMINAL DUES WITH DOMESTIC POSTAGE ON
+INTERNATIONAL MAIL'S CONTRIBUTION TO INSTITUTIONAL COST AND COST
+COVERAGE (Amounts in Millions)
+(1) (2) (3) (4)=(1)+(2)+(3)
+$1,486 $291 -$1,777 $1,030 $322 $50 $1,402 $456 ($31) ($50) $375
+144.3% 90.4% -126.7%
+(5) (6) (7) (8)=(5)+(6)+(7)
+-119.8%
+3/ Col. 1, L. 2 + WT 13, Col. 5, L.1 / 1000 + WT 13, Col. 5, L.4
+/ 1000 4/ Col. 2, L.1 + Col. 3, L. 3/ 1,000,000
+
+
+
+```
 #### command-line option #2: `--exclude-dir` (found using `man grep`)
 #### command-line option #3: `-n`,`--line-number` (found using `man grep`)
 #### command-line option #4: `--colour=[when]`,`--color=[when]` (found using `man grep`)
