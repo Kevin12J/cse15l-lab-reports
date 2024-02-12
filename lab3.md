@@ -45,7 +45,7 @@ The first change was changing `arr[i] = newArray[arr.length - i -1];` to `newArr
 ## Part 2: Researching Commands
 ### `grep` 
 #### command-line option #1: `--invert-match`
-#### command-line option #2: ` --exclude-dir`
+#### command-line option #2: `--exclude-dir`
 #### command-line option #3: `-n`,`--line-number`
 #### command-line option #4: `--colour=[when]`,`--color=[when]`
 
