@@ -61,6 +61,7 @@ The first change was changing `arr[i] = newArray[arr.length - i -1];` to `newArr
 ./911report/chapter-9.txt:                World restaurant on the 106th floor, from which calls had been made to the PAPD
 ./911report/chapter-9.txt:                been taking shelter in the restaurant and assisted them in evacuating. Up above, at
 ```
+The `-r` command line option allows us to use `grep` recurssively meaning that grep will search through each subdirectory in the working directory. For example calling `grep -r restaurant` in the `technical` directory will return the each line that contains `restaurant` in all the files in the `technical` directory. The output list the path to each file from the working directory followed by the line in the file containing the content that was being searched for. This command line option would be useful when trying to search for the occurences of a certain piece of content when there are multiple subdirectories because calling `grep` without this option only searched in the working directory.
 #### calling `grep -r FBI` in the `technical/government` directory
 ```
 ./Gen_Account_Office/Testimony_Jul15-2002_d02940t.txt:Investigation (FBI) and create a successful Department of Homeland
@@ -76,7 +77,7 @@ The first change was changing `arr[i] = newArray[arr.length - i -1];` to `newArr
 ./Gen_Account_Office/Testimony_Jul17-2002_d02957t.txt:Reorganization FBI Reorganization: Initial
 ./Media/Raising_the_Bar.txt:FBI
 ```
-#### command-line option #2: `--exclude-dir` (found using `man grep`)
+The `-r` command line option allows us to use `grep` recurssively meaning that grep will search through each subdirectory in the working directory. For example calling `grep -r FBI` in the `technical/government` directory will only return the lines containing `FBI` in the `technical/government` directory because that was the directory the command was called from. The output list the path to each file from the working directory followed by the line in the file containing the content that was being searched for. This command line option would be useful when trying to search for the occurences of a certain piece of content when there are multiple subdirectories, and this example demonstrates how you can change the current directory so control where `grep` recurssively searches.
 ##### callling `grep -r restaurant --exclude-dir 911report` in `technical` directory
 ```
 ./government/About_LSC/commission_report.txt:restaurant work, and day labor. See April Testimony at 16
@@ -85,10 +86,12 @@ The first change was changing `arr[i] = newArray[arr.length - i -1];` to `newArr
 ./government/Media/Working_for_Free.txt:matched wits with the partners over lunch at an upscale restaurant.
 ./biomed/1471-2458-3-2.txt:          outside the home (such as workplace or restaurants). They
 ```
+The `--exclude-dir` command line option is used alongside the `-r` command line argument and it makes `grep` avoid the specified directory when searching recurssively. For example, callling `grep -r restaurant --exclude-dir 911report` doesn't return the lines that contain `restaurant` in the `911report` directory even thought their are lines in that directory that contain `restaurant`. This command line option would be useful for when you want to search through all the subdirectories, but want to exclude a certain directory and its subdirectories if it has any.
 ##### calling `grep -r FBI --exclude-dir Gen_Account_Office` in `technical/government` directory
 ```
 ./Media/Raising_the_Bar.txt:FBI
 ```
+The `--exclude-dir` command line option is used alongside the `-r` command line argument and it makes `grep` avoid the specified directory when searching recurssively. For example, calling `grep -r FBI --exclude-dir Gen_Account_Office` in the `technical/government` directory doesn't return the lines that contain `FBI` in the `Gen_Account_Offices` directory. This command line option would be useful for when you want to search through all the subdirectories, but want to exclude a certain directory and avoid going through a certain set of data such as the `Gen_Account_Offices` information.
 #### command-line option #3: `-n`,`--line-number` (found using `man grep`)
 ##### calling `grep -n pineapple  *.txt ` in the `technical/biomed` directory
 ```
