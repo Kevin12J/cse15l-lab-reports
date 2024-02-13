@@ -78,6 +78,7 @@ The `-r` command line option allows us to use `grep` recurssively meaning that g
 ./Media/Raising_the_Bar.txt:FBI
 ```
 The `-r` command line option allows us to use `grep` recurssively meaning that grep will search through each subdirectory in the working directory. For example calling `grep -r FBI` in the `technical/government` directory will only return the lines containing `FBI` in the `technical/government` directory because that was the directory the command was called from. The output list the path to each file from the working directory followed by the line in the file containing the content that was being searched for. This command line option would be useful when trying to search for the occurences of a certain piece of content when there are multiple subdirectories, and this example demonstrates how you can change the current directory so control where `grep` recurssively searches.
+#### command-line option #2 `--exclude-dir` (found using `man grep`)
 ##### callling `grep -r restaurant --exclude-dir 911report` in the `technical` directory
 ```
 ./government/About_LSC/commission_report.txt:restaurant work, and day labor. See April Testimony at 16
