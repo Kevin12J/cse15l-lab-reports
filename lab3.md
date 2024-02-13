@@ -78,7 +78,7 @@ The `-r` command line option allows us to use `grep` recurssively meaning that g
 ./Media/Raising_the_Bar.txt:FBI
 ```
 The `-r` command line option allows us to use `grep` recurssively meaning that grep will search through each subdirectory in the working directory. For example calling `grep -r FBI` in the `technical/government` directory will only return the lines containing `FBI` in the `technical/government` directory because that was the directory the command was called from. The output list the path to each file from the working directory followed by the line in the file containing the content that was being searched for. This command line option would be useful when trying to search for the occurences of a certain piece of content when there are multiple subdirectories, and this example demonstrates how you can change the current directory so control where `grep` recurssively searches.
-##### callling `grep -r restaurant --exclude-dir 911report` in `technical` directory
+##### callling `grep -r restaurant --exclude-dir 911report` in the `technical` directory
 ```
 ./government/About_LSC/commission_report.txt:restaurant work, and day labor. See April Testimony at 16
 ./government/Media/Legal-aid_chief.txt:Koch owns the Eustis Pool Hall, a local landmark and restaurant,
@@ -87,7 +87,7 @@ The `-r` command line option allows us to use `grep` recurssively meaning that g
 ./biomed/1471-2458-3-2.txt:          outside the home (such as workplace or restaurants). They
 ```
 The `--exclude-dir` command line option is used alongside the `-r` command line argument and it makes `grep` avoid the specified directory when searching recurssively. For example, callling `grep -r restaurant --exclude-dir 911report` doesn't return the lines that contain `restaurant` in the `911report` directory even thought their are lines in that directory that contain `restaurant`. This command line option would be useful for when you want to search through all the subdirectories, but want to exclude a certain directory and its subdirectories if it has any.
-##### calling `grep -r FBI --exclude-dir Gen_Account_Office` in `technical/government` directory
+##### calling `grep -r FBI --exclude-dir Gen_Account_Office` in the `technical/government` directory
 ```
 ./Media/Raising_the_Bar.txt:FBI
 ```
@@ -98,7 +98,8 @@ The `--exclude-dir` command line option is used alongside the `-r` command line 
 1472-6882-1-10.txt:192:          antibiotics and the ananase enzyme (from the pineapple 
 gb-2002-3-10-research0053.txt:439:          in pineapple (~70% to 
 ```
-##### calling `grep --line-number funding CONFIG_STANDARDS.txt` in `technical/government/About_LSC` directory
+The `-n` command line option will list the line number corresponding to the file that contained the content `grep` was searching for. For example, calling `grep -n pineapple  *.txt ` in the `technical/biomed` directory returned the two lines containing `pineapple`. Before each line was listed, the file name and line number sepearted by a colon was listed on the left. This command line option would be useful for when you want to look back at the lines where the specified content was found since the line number was provided.
+##### calling `grep --line-number funding CONFIG_STANDARDS.txt` in the `technical/government/About_LSC` directory
 ```
 41:state bar association, state IOLTA funding entity, staffed legal
 90:LSC operates under a statutory mandate to make funding decisions
@@ -106,6 +107,7 @@ gb-2002-3-10-research0053.txt:439:          in pineapple (~70% to
 215:where appropriate allocate current funding to new projects and
 316:funding?
 ```
+The `--line-number` command line option is equivalent to the `-n` command line option and it will list the line number corresponding to the file that contained the content `grep` was searching for. For example, calling `grep --line-number funding CONFIG_STANDARDS.txt` in the `technical/government/About_LSC` directory returned 5 lines containing `911` in the `chapter-9.txt` file. Since this command was called on a file, it didn't list the file names like the above example, but it still listed the line numbers on the left. This command line option would be useful for when you want to look back at the lines where the specified content was found since the line number was provided.
 #### command-line option #4: `-m`,`--max-count` (found using `man grep`)
 ##### calling `grep -m 5 911 chapter-9.txt` in the `technical/911report` directory
 ```
@@ -115,6 +117,7 @@ gb-2002-3-10-research0053.txt:439:          in pineapple (~70% to
                 which had a center in each of the five boroughs. All 911 calls concerning fire
             Civilians, Fire Safety Personnel, and 911 Calls
 ```
+The `-m` command line option stops the search being performed by `grep` after a specified amount of found matches. For example, calling `grep -m 5 911 chapter-9.txt` in the `technical/911report` directory returned 5 lines where `911` was found since `5` was specified after the `-m` command line option. This command line option would be useful if you only want find the first few occurence of a specified content.
 ##### calling `grep --max-count 5 911 *.txt` in the `technical/911report` directory
 ```
 chapter-13.5.txt:                received by civilians in the towers based on (1) calls to NYPD 911 from or
@@ -128,5 +131,6 @@ chapter-9.txt:                of emergency response. When a 911 call concerned a
 chapter-9.txt:                which had a center in each of the five boroughs. All 911 calls concerning fire
 chapter-9.txt:            Civilians, Fire Safety Personnel, and 911 Calls
 ```
+The `--max-count` command line option is equivalent to the `-m` command line option and it will list the line number corresponding to the file that contained the content `grep` was searching for. For example, calling `grep --max-count 5 911 *.txt` in the `technical/911report` directory returned 5 lines where `911` was found since `5` was specified after the `--max-count` command line option. The name of each file was listed for each line on the left since the command was called on all the `.txt` files in the directory instead of on one file. This command line option would be useful if you only want find the first few occurence of a specified content.
 
 
