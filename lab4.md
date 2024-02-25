@@ -1,6 +1,6 @@
 # Lab Report 4: Vim
 ## Log into ieng6
-![Step4.png]
+![Step4](/Step4.png)
 ## Clone your fork of the repository from your Github account (using the SSH URL)
 ## Run the tests, demonstrating that they fail
 ## Edit the code file to fix the failing test
