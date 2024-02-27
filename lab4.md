@@ -4,7 +4,7 @@
 Type `ssh kejacob@ieng6-201.ucsd.edu` and then press `<enter>`. I was not prompted to enter in my password because my ssh key was set up previously.
 ## Clone your fork of the repository from your Github account (using the SSH URL)
 ![Step5](/Step5Fix2.png)
-Type `git clone git@github.com: Kevin12J/lab7•git` and then press `<enter>`. This is used to clone my fork of the repository using the SSH URL.
+Type `git clone git@github.com: Kevin12J/lab7.git` and then press `<enter>`. This is used to clone my fork of the repository using the SSH URL.
 ## Run the tests, demonstrating that they fail
 ![Step6](/Step6.png)
 Type `cd lab7` and press `<enter>` in order to go into the `lab7` directory. Then type `bash test.sh` and press `<enter>` in order to run the script which runs the tests and shows that they fail.
