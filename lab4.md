@@ -19,4 +19,5 @@ Press `<up><up><enter>` in order to run the test script since the command was 2 
 ## Commit and push the resulting change to your Github account (you can pick any commit message!)
 ![Step9A](/Step9A.png)
 ![Step9B](/Step9B.png)
+
 Type `git add .` and then press `<enter>` in order to add the changes to the staging area and then create the commit by typing `git commit` and pressing `<enter>`. The terminal will open a vim editor in order to create the commit message. Press `<i>` to enter insert mode and type the commit message. After press `<esc>` to enter normal mode and press `<:><w><q><enter>` to save and exit the commit message editor. Finally type `git push origin main` and press `<enter>` in order to push the changes to the repository.
