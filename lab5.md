@@ -33,7 +33,7 @@ Caused by: java.lang.ClassNotFoundException: org.junit.runner.JUnitCore
 ```
 I have the following lines in `test.sh` to compile and run the tests by calling `bash test.sh` in the terminal
 ```
-CPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
+CPATH='.:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar'
 
 javac -cp javac -cp $CPATH *.java
 
@@ -53,7 +53,7 @@ test.sh
 ### Response From TA
 Try and check what is stored in the `CPATH` variable in the bash script. You can also refer to the lecture 6 notes where we introduced Junit.
 ### Student Terminal Output After Suggestion
-Thanks, I checked my `CPATH` variable and realized it was set to `'.:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar'`. I wrong path was used, and the correct path is `'.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'`. My tests were now able to run in my testing script.
+Thanks, I checked my `CPATH` variable and realized it was set to `'.:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar'`. The wrong path was used, and the correct path is `'.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'`. My tests were now able to run in my testing script.
 ```
 JUnit version 4.13.2
 .
