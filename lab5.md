@@ -31,8 +31,10 @@ TestFactor.java:21: error: cannot find symbol
 Error: Could not find or load main class org.junit.runner.JUnitCore
 Caused by: java.lang.ClassNotFoundException: org.junit.runner.JUnitCore
 ```
-I have the following two lines in my testing script to compile and run the tests
+I have the following lines in `test.sh` to compile and run the tests by calling `bash test.sh` in the terminal
 ```
+CPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
+
 javac -cp javac -cp $CPATH *.java
 
 java -cp $CPATH org.junit.runner.JUnitCore TestFactor 
@@ -59,6 +61,32 @@ Time: 0.003
 
 OK (1 test)
 ```
-### Information About The Setup
+### Information About The Setup That Was Needed
+#### file and directory structure
+```
+lib/
+  /hamcrest-core-1.3.jar
+  /junit-4.13.2.jar
+MathExamples.class
+MathExamples.java
+testFactor.class
+TestFactor.java
+test.sh
+```
+#### contents of the file
+`test.sh` file contents:
+
+```
+CPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
+
+javac -cp javac -cp $CPATH *.java
+
+java -cp $CPATH org.junit.runner.JUnitCore TestFactor 
+```
+#### commands ran to trigger bug
+`bash test.sh`
+#### what to edit
+The path in  the `CPATH` variable needed to be change in order to properly compile and run the Junit tests.
+
 ## Reflection
 Something really helpful that I learned was about was using git in order to effectively colaborate with others on projects. I did use git prior to taking 15L, but I used it to simply backup my code. The lab experiences have taught me how to take advantage of the many other functionalities in git. For example, I learned about using branches in git which will be helpful for when I want to work on a seperate part of a project without impacting the main branch. Another useful tool that I learned in lab was the use of pull requests. Pull requests will be helpful for when I want to report bugs and offer potential fixes especially on open source projects. Learning git through lab has been very helpful, and I am excited to use it more in the future.
