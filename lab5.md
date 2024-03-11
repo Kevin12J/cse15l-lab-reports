@@ -2,6 +2,7 @@
 ## Part 1 - Debugging Scenario
 ### Original Post From Student
 **Title:** Can't run Junit from terminal using testing script
+
 **Message:**
 I was working on a MathExamples class and implemented a factor method which returns an ArrayList of the factors of an integer. I created a few Junit tests that pass when I run them through VScode. However, when I run the testing script that I have, none of my tests will run, and I get an error. Here is the error message
 ```
