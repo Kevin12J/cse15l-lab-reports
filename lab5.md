@@ -1,4 +1,4 @@
-# Lab Report 5: Putting it All Togetehr
+# Lab Report 5: Putting it All Together
 ## Part 1 - Debugging Scenario
 ### Original Post From Student
 **Title:** Can't run Junit from terminal using testing script
